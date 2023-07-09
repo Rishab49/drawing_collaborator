@@ -10,7 +10,7 @@ const Connection = () => {
   useEffect(() => connect(), []);
 
   return (
-    <div className="container">
+    <div className="connection_container">
       <div className="input_container">
         <button
           type="button"
@@ -23,13 +23,16 @@ const Connection = () => {
         >
           Create Room
         </button>
-        <input type="text" ref={roomRef}></input>
-        <button
-          type="button"
-          onClick={() => navigate(`/draw/${roomRef.current.value}`)}
-        >
-          Join Room
-        </button>
+        <hr width="100%"></hr>
+        <div className="join_container">
+          <input type="text" ref={roomRef} placeholder="Enter the room ID"></input>
+          <button
+            type="button"
+            onClick={() => navigate(`/draw/${roomRef.current.value}`)}
+          >
+            Join Room
+          </button>
+        </div>
       </div>
     </div>
   );
